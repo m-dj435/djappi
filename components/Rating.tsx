@@ -6,8 +6,8 @@ interface RatingProps {
 
 export const Rating = ({ ratingScore }: RatingProps) => {
   return (
-    <div className="text-center text-blue-600 font-bold bg-gray-400">
-      {ratingScore}
+    <div className="text-center text-black bg-gray-400">
+      Ocena: {ratingScore}/5
     </div>
   );
 };

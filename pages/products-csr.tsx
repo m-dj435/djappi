@@ -1,4 +1,4 @@
-import { Product } from "../components/Product";
+import { ProductListItem } from "../components/Product";
 import { useQuery } from "react-query";
 
 const getProducts = async () => {
@@ -24,14 +24,14 @@ const ProductsCSRPage = () => {
       {data.map((product) => {
         return (
           <li key={product.id}>
-            <Product
+            <ProductListItem
               dataObject={{
+                id: product.id,
                 title: product.title,
                 thumbnailUrl: product.category.image,
                 thumbnailAlt: product.title,
-                description: product.description,
-                rating: product.category.id,
                 category: product.category.name,
+                price: product.price,
               }}
             />
           </li>

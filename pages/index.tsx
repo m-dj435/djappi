@@ -1,11 +1,12 @@
 // import { Main } from "../components/Main";
 
-import { Product } from "../components/Product";
 import styles from "../styles/Home.module.css";
+import useWindowWidth from "../hooks/useWindowWidth";
 //<div className={styles.container}>
 
 const DATA = {
-  title: `Tytuł`,
+  id: 1,
+  title: `Przykładowy Tytuł`,
   description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
           suscipit imperdiet quam id congue. Pellentesque tristique et massa vel
           consequat. Aliquam erat volutpat. Aenean id auctor orci. Donec aliquam
@@ -20,14 +21,17 @@ const DATA = {
           laoreet mauris eu tincidunt lacinia.`,
   thumbnailUrl: `https://picsum.photos/200/300`,
   thumbnailAlt: `opis - zdjecie losowe`,
-  rating: 3.3,
-  category: `losowe zdjecie`,
+  rating: 5,
+  category: `losowe zdjecie z losowej kategorii`,
+  price: 100,
 };
 
 export default function Home() {
+  const width = useWindowWidth();
+
   return (
-    <div className="grid md:grid-cols-1 gap-2">
-      <Product dataObject={DATA} />
-    </div>
+    <>
+      <div className="flex text-teal-600">szerokość ekranu : {width} px</div>
+    </>
   );
 }
